@@ -1,0 +1,65 @@
+jake-johnson-cafe/
+│
+├── index.html (Landing page with login options)
+├── user-login.html
+├── user-register.html
+├── admin-login.html
+│
+├── user/
+│   ├── home.html (User dashboard with features)
+│   ├── about.html (About us page with story)
+│   ├── menu.html (Complete menu with categories)
+│   ├── order.html (Shopping cart & ordering)
+│   └── contact.html (Contact form)
+│
+├── admin/
+│   ├── dashboard.html (Statistics & overview)
+│   ├── menu-items.html (Manage menu items)
+│   ├── orders.html (View & manage orders)
+│   └── settings.html (Cafe settings & admin profile)
+│
+├── css/
+│   └── style.css (Complete styling)
+│
+└── js/
+    ├── auth.js (Login/Registration logic)
+    ├── user.js (User-side functionality)
+    └── admin.js (Admin-side functionality)
+
+
+🎯 Features Implemented:
+✅ User Side:
+
+Login & Registration with validation
+Responsive header/footer on all pages
+Home page with features & popular items
+About Us page with team & values
+Menu page with 24+ items in 4 categories
+Order page with shopping cart functionality
+Contact page with form validation
+
+✅ Admin Side:
+Admin login
+Dashboard with stats & recent orders
+Menu Items management (Add/Edit/Delete)
+Orders management with status updates
+Settings page (Cafe info, hours, tax, profile)
+
+🔑 Demo Credentials:
+User Login:
+Email: user@cafe.com
+Password: password123
+
+Admin Login:
+Email: admin@cafe.com
+Password: admin123
+
+💡 JavaScript Functionality:
+✅ Form validation working
+✅ Login/logout working
+✅ Shopping cart working
+✅ Menu filtering working
+✅ Order management working
+✅ All buttons functional
+✅ Responsive design
+✅ Smooth animations
