@@ -1,0 +1,143 @@
+<!-- ============================================ -->
+<!-- FILE: user/order.html -->
+<!-- ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Jake Johnson Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">☕ Jake Johnson Cafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4">Place Your Order</h1>
+            <p class="lead">Choose your favorites and we'll prepare them fresh</p>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Order Form -->
+                <div class="col-lg-8 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Select Items</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="orderItems"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm sticky-top" style="top: 80px;">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0">🛒 Your Cart</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="cartItems">
+                                <p class="text-muted text-center">Your cart is empty</p>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">₹0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tax (5%):</span>
+                                <span id="tax">₹0</span>
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold mb-3">
+                                <span>Total:</span>
+                                <span id="total">₹0</span>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="placeOrder()" id="placeOrderBtn" disabled>
+                                Place Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="success-icon mb-3">✅</div>
+                    <h3>Order Placed Successfully!</h3>
+                    <p class="text-muted">Your order #<span id="orderNumber"></span> has been received.</p>
+                    <p>Estimated preparation time: 15-20 minutes</p>
+                    <button class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Jake Johnson Cafe</h5>
+                    <p>Your daily dose of happiness in a cup</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-white-50">Home</a></li>
+                        <li><a href="menu.html" class="text-white-50">Menu</a></li>
+                        <li><a href="about.html" class="text-white-50">About</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Contact Info</h6>
+                    <p class="text-white-50 mb-1">📍 123 Cafe Street, Mumbai</p>
+                    <p class="text-white-50 mb-1">📞 +91 98765 43210</p>
+                    <p class="text-white-50 mb-1">✉️ info@jakejohnsoncafe.com</p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Jake Johnson Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/user.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', initializeOrder);
+    </script>
+</body>
+</html>

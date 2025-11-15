@@ -1,0 +1,140 @@
+
+<!-- ============================================ -->
+<!-- FILE: user/contact.html -->
+<!-- ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jake Johnson Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">☕ Jake Johnson Cafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4">Contact Us</h1>
+            <p class="lead">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-7 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4">Send us a Message</h3>
+                            <div id="contactAlert"></div>
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Your email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="contactPhone" placeholder="Your phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Message subject">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" placeholder="Your message"></textarea>
+                            </div>
+                            <button class="btn btn-primary" onclick="submitContact()">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-5">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">📍 Visit Us</h4>
+                            <p class="mb-3"><strong>Address:</strong><br>123 Cafe Street, Andheri West<br>Mumbai, Maharashtra 400058</p>
+                            <p class="mb-3"><strong>Phone:</strong><br>+91 98765 43210</p>
+                            <p class="mb-3"><strong>Email:</strong><br>info@jakejohnsoncafe.com</p>
+                            <p class="mb-0"><strong>Hours:</strong><br>Mon-Fri: 7:00 AM - 10:00 PM<br>Sat-Sun: 8:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">🗺️ Location</h4>
+                            <div class="map-placeholder">
+                                <div class="placeholder-box">
+                                    <span class="display-4">📍</span>
+                                    <p class="mt-2">Google Maps</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Jake Johnson Cafe</h5>
+                    <p>Your daily dose of happiness in a cup</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-white-50">Home</a></li>
+                        <li><a href="menu.html" class="text-white-50">Menu</a></li>
+                        <li><a href="about.html" class="text-white-50">About</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Contact Info</h6>
+                    <p class="text-white-50 mb-1">📍 123 Cafe Street, Mumbai</p>
+                    <p class="text-white-50 mb-1">📞 +91 98765 43210</p>
+                    <p class="text-white-50 mb-1">✉️ info@jakejohnsoncafe.com</p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Jake Johnson Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!-- ============================================ -->
+<!-- FILE: admin/dashboard.html -->
+<!-- ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Jake Johnson Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.html">🔐 Admin Panel - Jake Johnson Cafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu-items.html">Menu Items</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="adminLogout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container-fluid py-4">
+        <h2 class="mb-4">Dashboard Overview</h2>
+
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white shadow">
+                    <div class="card-body">
+                        <h6 class="card-title">Today's Orders</h6>
+                        <h2 class="mb-0">45</h2>
+                        <small>+12% from yesterday</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white shadow">
+                    <div class="card-body">
+                        <h6 class="card-title">Today's Revenue</h6>
+                        <h2 class="mb-0">₹12,450</h2>
+                        <small>+8% from yesterday</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white shadow">
+                    <div class="card-body">
+                        <h6 class="card-title">Active Users</h6>
+                        <h2 class="mb-0">234</h2>
+                        <small>Registered customers</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white shadow">
+                    <div class="card-body">
+                        <h6 class="card-title">Menu Items</h6>
+                        <h2 class="mb-0">56</h2>
+                        <small>Total products</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Recent Orders -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Recent Orders</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersTable">
+                                    <tr>
+                                        <td>#ORD001</td>
+                                        <td>John Doe</td>
+                                        <td>2</td>
+                                        <td>₹350</td>
+                                        <td><span class="badge bg-warning">Preparing</span></td>
+                                        <td>2 mins ago</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD002</td>
+                                        <td>Sarah Smith</td>
+                                        <td>3</td>
+                                        <td>₹520</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>15 mins ago</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD003</td>
+                                        <td>Mike Johnson</td>
+                                        <td>1</td>
+                                        <td>₹150</td>
+                                        <td><span class="badge bg-primary">New</span></td>
+                                        <td>Just now</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD004</td>
+                                        <td>Emma Wilson</td>
+                                        <td>4</td>
+                                        <td>₹680</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>25 mins ago</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD005</td>
+                                        <td>David Brown</td>
+                                        <td>2</td>
+                                        <td>₹420</td>
+                                        <td><span class="badge bg-warning">Preparing</span></td>
+                                        <td>30 mins ago</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Popular Items Today</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>☕ Cappuccino</span>
+                                    <span class="badge bg-primary">28 orders</span>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>🥐 Croissant</span>
+                                    <span class="badge bg-primary">22 orders</span>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>🥪 Club Sandwich</span>
+                                    <span class="badge bg-primary">18 orders</span>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>🍰 Chocolate Cake</span>
+                                    <span class="badge bg-primary">15 orders</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex justify-content-between">
+                                    <span>☕ Latte</span>
+                                    <span class="badge bg-primary">12 orders</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a href="orders.html" class="btn btn-primary">View All Orders</a>
+                            <a href="menu-items.html" class="btn btn-outline-primary">Manage Menu</a>
+                            <a href="settings.html" class="btn btn-outline-secondary">Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
+
+
+
+
